@@ -29,11 +29,14 @@ const server = http.createServer((req, res) => {
         req.on('end', function() {
             const parsedBody = Buffer.concat(body).toString()
             const message = parsedBody.split("=")[1]
-            fs.writeFileSync('message.txt', message)
-            res.writeHead(302, {
-                Location: "/"
+            fs.writeFile('message.txt', message, function(error) {
+                if (error) {
+                    return console.log(error)
+                }
+
+                res.writeHead(302, { Location: "/"})
+                return res.end()
             })
-            return res.end()
         })
     }
 
