@@ -4,8 +4,11 @@
   "description": "Complete Node.js Guide",
   "main": "app.js",
   "scripts": {
-    "start": "node ./app.js"
+    "start": "nodemon ./app.js"
   },
   "author": "Felix Anducho",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
