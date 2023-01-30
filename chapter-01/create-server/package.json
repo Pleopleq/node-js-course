@@ -1,0 +1,11 @@
+{
+  "name": "create-server",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "author": "Felix Anducho",
+  "license": "ISC"
+}
