@@ -1,6 +1,7 @@
 const path = require("path")
 const express = require("express")
 const rootPath = require("../utils/rootPath")
+const adminData = require("./admin")
 
 const router = express.Router()
 
