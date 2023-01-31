@@ -6,7 +6,7 @@ const shopRouter = require("./routes/shop")
 const app = express()
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use(adminRouter)
+app.use("/admin",adminRouter)
 app.use(shopRouter)
 
 app.use(function(req,res, next) {
