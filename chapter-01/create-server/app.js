@@ -1,8 +1,16 @@
-const http = require("http")
-const routes = require("./routes")
+const express = require("express")
 
-const server = http.createServer(routes)
+const app = express()
 
-server.listen(3000, () => {
-    console.log("Server up and running...")
+app.use((req, res, next) => {
+    console.log("MIDDLEWARE TRIGGERED")
+    next()
 })
+
+app.use((req, res, next) => {
+    console.log("MIDDLEWARE TRIGGERED AGAEN")
+    res.send("<h1>USING EXPRESS</h1>")
+    next()
+})
+
+app.listen(3000)
