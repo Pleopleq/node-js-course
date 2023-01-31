@@ -10,3 +10,7 @@ ul {
 a {
     color: white;
 }
+
+.notWhite {
+    color: blue;
+}

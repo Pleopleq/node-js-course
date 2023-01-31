@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Shop
+        title #{docTitle}
         link(rel="stylesheet", href="/css/styles.css")
     body 
         header
@@ -14,3 +14,13 @@ html(lang="en")
                         a(href="/") Shop
                     li
                         a(href="/admin/add-product") Add Product
+        main 
+            h1 My Products
+            if products.length > 0
+                div
+                    each product in products
+                        div 
+                            h2 #{product.title}
+            else
+                h3 Empty product list. #[a.notWhite(href="/admin/add-product") Go add some products] 
+
