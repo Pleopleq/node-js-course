@@ -24,15 +24,15 @@ module.exports = class Product {
         })
     }
 
-    static getAll() {
+    static getAll(cb) {
         const productsPath = path.join(path.dirname(__dirname), 'data', 'products.json')
 
         fs.readFile(productsPath, (err, fileContent) => {
-            if (!err) {
-                return []
+            if (err) {
+                cb([])
             }
 
-            return JSON.parse(fileContent)
+            cb(JSON.parse(fileContent))
         })
     }
 }

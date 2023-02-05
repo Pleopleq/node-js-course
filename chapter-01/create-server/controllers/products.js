@@ -11,6 +11,7 @@ exports.postAddProduct = function (req, res, next) {
 }
 
 exports.getProducts = function (req, res, next) {
-    const products = Product.getAll()
-    res.render("shop", { docTitle: 'Shop', products })
+    Product.getAll((products) => {
+        res.render("shop", { docTitle: 'Shop', products })
+    })
 }
