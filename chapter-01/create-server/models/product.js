@@ -1,5 +1,6 @@
 const path = require("path")
 const fs = require("fs")
+const productsPath = path.join(path.dirname(__dirname), 'data', 'products.json')
 
 module.exports = class Product {
     constructor(title) {
@@ -7,8 +8,6 @@ module.exports = class Product {
     }
 
     save() {
-        const productsPath = path.join(path.dirname(__dirname), 'data', 'products.json')
-
         fs.readFile(productsPath, (err, data) => {
             let products = []
 
@@ -25,11 +24,9 @@ module.exports = class Product {
     }
 
     static getAll(cb) {
-        const productsPath = path.join(path.dirname(__dirname), 'data', 'products.json')
-
         fs.readFile(productsPath, (err, fileContent) => {
             if (err) {
-                cb([])
+                return cb([])
             }
 
             cb(JSON.parse(fileContent))
