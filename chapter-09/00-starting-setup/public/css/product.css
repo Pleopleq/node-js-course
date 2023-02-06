@@ -5,6 +5,13 @@
     display: block;
 }
 
+.product-item__details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+}
+
 .product-item {
     width: 20rem;
     max-width: 95%;
