@@ -19,3 +19,5 @@ const Product = sequelize.define('product', {
   },
   description: Sequelize.TEXT
 })
+
+module.exports = Product
